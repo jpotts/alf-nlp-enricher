@@ -1,0 +1,12 @@
+server.port: 8082
+server.address: 127.0.0.1
+
+work.path: /srv/nlp
+
+kafka.servers: kafka.local:9092
+kafka.topic: alfresco-node-events
+kafka.group: group2
+
+alfresco.base.url: http://localhost:8080/alfresco
+alfresco.user: admin
+alfresco.password: admin
