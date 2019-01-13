@@ -24,6 +24,9 @@ import java.util.HashSet;
 @Service
 public class NodeProcessor {
     private static final Logger logger = LogManager.getLogger(NodeProcessor.class);
+    public static final String PROP_LOCATIONS = "mge:locationEntities";
+    public static final String PROP_ORGS = "mge:orgEntities";
+    public static final String PROP_NAMES = "mge:nameEntities";
 
     @Value("${work.path}")
     private String workPath;
@@ -122,9 +125,9 @@ public class NodeProcessor {
 
         // Create a set of properties for the extracted entities
         HashMap<String, Serializable> properties = new HashMap<>();
-        properties.put("mge:locationEntities", toArrayList(locations));
-        properties.put("mge:orgEntities", toArrayList(orgs));
-        properties.put("mge:nameEntities", toArrayList(names));
+        properties.put(PROP_LOCATIONS, toArrayList(locations));
+        properties.put(PROP_ORGS, toArrayList(orgs));
+        properties.put(PROP_NAMES, toArrayList(names));
 
         // Update the node in Alfresco
         try {
